@@ -22,4 +22,20 @@
         android:layout_gravity="center"
         android:visibility="gone"/>
 
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:paddingTop="60dp"/>
+
+    <Button
+        android:id="@+id/phone_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Dial Number"/>
+
 </LinearLayout>
