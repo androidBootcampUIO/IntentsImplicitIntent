@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button cameraButton = (Button) findViewById(R.id.camera_button);
         Button phoneButton = (Button) findViewById(R.id.phone_button);
+        Button webButton = (Button) findViewById(R.id.web_button);
 
         phoneNumber = (EditText) findViewById(R.id.phone_number);
         imageView = (ImageView) findViewById(R.id.image_view);
@@ -45,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Empty phone number", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        webButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openWebPage("thoughtworks.com");
             }
         });
     }
@@ -76,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (phoneIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(phoneIntent);
+        }
+    }
+
+    private void openWebPage(String url) {
+        Uri webpage = Uri.parse("https:" + url);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, webpage);
+        if (browserIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(browserIntent);
         }
     }
 }

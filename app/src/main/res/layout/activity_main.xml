@@ -38,4 +38,11 @@
         android:layout_margin="16dp"
         android:text="Dial Number"/>
 
+    <Button
+        android:id="@+id/web_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Open TW page"/>
+
 </LinearLayout>
